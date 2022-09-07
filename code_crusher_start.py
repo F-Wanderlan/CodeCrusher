@@ -33,11 +33,18 @@ LOSE = -1
 #
 #  Only modify the file below this point
 #
+
 ###############################################################################
 
 #
-#  Insert your implementation of createBoard here
-#
+def createBoard(linha, coluna, simbolo):
+  board = []
+  for i in range(linha):
+    boardControl =[]
+    for k in range(coluna):
+      boardControl.append(randrange(0, simbolo -1))
+    board.append(boardControl)
+  return board
 
 #
 #  Modify the board by swapping two pieces.
@@ -50,7 +57,10 @@ LOSE = -1
 #  Returns: None -- the game board passed as a parameter is modified
 #
 def swap(board, r1, c1, r2, c2):
-  pass
+  num1 = board[r1][c1]
+  num2 = board[r2][c2]
+  board[r1][c1] = num2
+  board[r2][c2] = num1
 
 #
 #  Modify the board to clear all occurences of a given piece, replacing them
@@ -63,7 +73,11 @@ def swap(board, r1, c1, r2, c2):
 #  Returns: None -- the game board passed as a parameter is modified
 #
 def clearAll(board, sym):
-  pass
+  for i in range(0, len(board[0])):
+    for k in range(0, len(board[0][0]+1)):
+      if(board[k] == sym):
+        board[k] == EMPTY
+
 
 #
 #  Insert your implementations of vLineAt and hLineAt here

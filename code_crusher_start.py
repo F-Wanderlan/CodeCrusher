@@ -73,10 +73,11 @@ def swap(board, r1, c1, r2, c2):
 #  Returns: None -- the game board passed as a parameter is modified
 #
 def clearAll(board, sym):
-  for i in range(0, len(board[0])):
-    for k in range(0, len(board[0][0]+1)):
-      if(board[k] == sym):
-        board[k] == EMPTY
+  for i in range(len(board)):
+    for k in range(len(board[i])):
+      if(board[i][k] == sym):
+        board[i][k] = EMPTY
+
 
 
 #
@@ -95,8 +96,44 @@ def clearAll(board, sym):
 #
 #  Returns: True if the proposed swap creates a line.  False otherwise.
 #
+
+def vLineAt(board, r1, c1):
+  if (r1-2 >= 0 and \
+     board[r1-2][c1] == board[r1-1][c1] and board[r1-1][c1] == board[r1][c1]):
+    return True
+  if (r1-1 >= 0 and r1+1 < len(board) and \
+     board[r1-1][c1] == board[r1][c1] and board[r1][c1] == board[r1+1][c1]):
+    return True
+  if (r1+2 < len(board) and \
+     board[r1][c1] == board[r1+1][c1] and board[r1+1][c1] == board[r1+2][c1]):
+    return True
+
+  return False
+
+def hLineAt(board, r1, c1):
+  if (c1-2 >= 0 and \
+     board[r1][c1-2] == board[r1][c1-1] and board[r1][c1-1] == board[r1][c1]):
+    return True
+  if (c1-1 >= 0 and c1+1 < len(board[r1]) and \
+     board[r1][c1-1] == board[r1][c1] and board[r1][c1] == board[r1][c1+1]):
+    return True
+  if (c1+2 < len(board[r1]) and \
+     board[r1][c1] == board[r1][c1+1] and board[r1][c1+1] == board[r1][c1+2]):
+    return True
+
+  return False
+
+
 def canSwap(board, r1, c1, r2, c2):
-  return True
+  swap(board, r1, c1, r2, c2)
+  if((hLineAt(board, r1, c1) or hLineAt(board, r2, c2)) or (vLineAt(board, r1, c1) or vLineAt(board, r2, c2))):
+    swap(board, r1, c1, r2, c2)
+    return True
+
+
+  swap(board, r1, c1, r2, c2)
+  return False
+
 
 #
 #  Identify two adjacent positions on the board that can be swapped to 

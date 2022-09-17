@@ -1762,10 +1762,9 @@ def main():
     setFont("Arial", s=24)
   
     mx, my = mousePos()
-
     y = 250
     selected = ""
-    for difficulty in ["Casual", "Normal", "Hard", "Brutal"]:
+    for difficulty in ["Poke Ball", "Great Ball", "Ultra Ball", "Master Ball"]:
       if my >= y - 20 and my <= y + 20 and mx >= 345 and mx <= 455:
         selected = difficulty
         setColor(254,199,0)
@@ -1773,35 +1772,35 @@ def main():
         setColor("White")
       text(400, y, difficulty)
       y += 70
-    
+
     #play()
     update()
 
     if selected != "" and leftButtonPressed():
       break
-  
+
   target_score = 5000
   max_turns = 35
   rows = 8
   cols = 8
-  syms = 5 
-  if selected == "Normal":
+  syms = 5
+  if selected == "Great Ball":
     target_score = 15000
     max_turns = 32
     rows = 8
-    cols = 7 
-    syms = 5 
-  if selected == "Hard":
+    cols = 7
+    syms = 5
+  if selected == "Ultra Ball":
     target_score = 5000
     max_turns = 30
     rows = 7
-    cols = 7 
+    cols = 7
     syms = 6
-  if selected == "Brutal":
+  if selected == "Master Ball":
     target_score = 10000
     max_turns = 35
     rows = 6
-    cols = 7 
+    cols = 7
     syms = 6
 
   play(target_score, max_turns, rows, cols, syms, bg, cc_m, images, sel_images, win_image, lose_image)

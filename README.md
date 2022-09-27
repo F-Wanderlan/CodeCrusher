@@ -5,6 +5,7 @@ Fomos livres para alterar o programa como quisermos, dessa forma, escolhemos tro
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Equipe: 
+
         Fabiano Wanderlan Dos Reis Pontes Junior 
         
         João Vitor Costa do Nascimento Silva 

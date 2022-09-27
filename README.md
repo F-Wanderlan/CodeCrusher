@@ -4,7 +4,7 @@ Fomos livres para alterar o programa como quisermos, dessa forma, escolhemos tro
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Equipe: João Vitor Costa do Nascimento Silva
-        João Vitor Freirer dos Santos
-        Fabiano Wanderlan Dos Reis Pontes Junior
-        Mikaelson Targino 
+Equipe: João Vitor Costa do Nascimento Silva \n
+        João Vitor Freirer dos Santos \n
+        Fabiano Wanderlan Dos Reis Pontes Junior \n
+        Mikaelson Targino \n
